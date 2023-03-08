@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+    #myButton {
+      position: relative;
+      left: 0;
+      top: 0;
+      transition: left 0.5s ease-out, top 0.5s ease-out;
+    }
+    .btn-container {
+      display: flex;
+      gap: 2rem;
+    }
+    .btn-container button {
+      width: 120px;
+      height: 40px;
+      border: 0;
+      background-color: #ff1f58;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h1>Hi! gusto mo ba ako?</h1>
+    <div class="btn-container">
+      <button id="myButtonTrue">Oo</button>
+      <button id="myButton">Hindi</button>
+    </div>
+    <script>
+      const buttonNo = document.getElementById("myButton");
+      const buttonYes = document.getElementById("myButtonTrue");
+
+      buttonNo.addEventListener("mouseover", () => {
+        const x = Math.floor(Math.random() * 200) - 50;
+        const y = Math.floor(Math.random() * 200) - 50;
+        buttonNo.style.left = `${x}px`;
+        buttonNo.style.top = `${y}px`;
+        buttonNo.style.cursor = "pointer";
+      });
+
+      buttonYes.addEventListener("click", () => {
+        alert("Yieee!");
+      });
+
+      //   button.addEventListener("mouseout", () => {
+      //     button.style.left = "0";
+      //     button.style.top = "0";
+      //   });
+    </script>
+  </body>
+</html>
